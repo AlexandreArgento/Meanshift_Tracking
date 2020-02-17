@@ -1,4 +1,5 @@
 from imutils.video import WebcamVideoStream
+import numpy as np
 import time
 import cv2
 import dlib
@@ -36,6 +37,8 @@ if __name__ == '__main__':
             curWindow = (int(bbox.left()), int(bbox.top()), int(bbox.right() - bbox.left()),
                          int(bbox.bottom() - bbox.top()))
 
+            # curWindow = (200, 100, 300, 100)
+
             # intialize the meanShift Tracker
             meanShifTracker = MeanShiftTracker(curWindow, frame)
 
@@ -45,8 +48,8 @@ if __name__ == '__main__':
         meanShifTracker.computeNewWindow(frame)
 
         x, y, w, h = meanShifTracker.getCurWindow()
-        # bkprojectImage = meanShifTracker.getBackProjectedImage(frame)
-        # cv2.imshow("MeanShift Face in Back Project Image", bkprojectImage)
+        backProjectImage = meanShifTracker.getBackProjectedImage(frame)
+        cv2.imshow("MeanShift Face in Back Project Image", backProjectImage)
         cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2, cv2.LINE_AA)
 
         # show the frame and update the FPS counter
