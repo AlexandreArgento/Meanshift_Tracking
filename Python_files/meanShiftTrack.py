@@ -45,8 +45,8 @@ if __name__ == '__main__':
         meanShifTracker.computeNewWindow(frame)
 
         x, y, w, h = meanShifTracker.getCurWindow()
-        bkprojectImage = meanShifTracker.getBackProjectedImage(frame)
-        cv2.imshow("MeanShift Face in Back Project Image", bkprojectImage)
+        # bkprojectImage = meanShifTracker.getBackProjectedImage(frame)
+        # cv2.imshow("MeanShift Face in Back Project Image", bkprojectImage)
         cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2, cv2.LINE_AA)
 
         # show the frame and update the FPS counter

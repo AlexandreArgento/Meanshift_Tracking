@@ -33,7 +33,7 @@ class MeanShiftTracker(object):
 
     def getBackProjectedImage(self, imgBGR):
         '''
-           convert the current BGR image, imgBGR, to HSV color space 
+           convert the current BGR image, imgBGR, to HSV color space
            and return the backProjectedImg
         '''
         imgHSV = cv2.cvtColor(imgBGR, cv2.COLOR_BGR2HSV)
