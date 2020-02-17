@@ -12,3 +12,7 @@
 ### Limites
 - Rapidité trop grande de l'objet telle que l'objet, d'une frame à lautre soit situé dans des zones rectangulaires qui ne se recouvrent pas.
 => Solution: combiner l'algorithme avec un filtrage de Kalman ou particulaire.
+
+### Remarques
+Aucun détail concernant la méthode d'estimation du centre de l'objet.
+L'article mentionne simplement qu'elle repose sur l'histogramme des couleurs à partir de la région sélectionnée.
